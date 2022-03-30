@@ -5,11 +5,11 @@ set :application, "deploy-test"
 set :repo_url, "https://github.com/k-nishimoto-libertyfish/deploy-test.git"
 server "nakadate-pro.local", port: 2525, roles: [:app, :web, :db], primary: true
 
-set :user, "deploy"
+set :user, "nakadate"
 set :use_sudo, false
 set :stage, :production
 set :deploy_via, :remote_cache
-set :deploy_to, "/home/deploy/rails/#{fetch(:application)}"
+set :deploy_to, "/home/nakadate/rails/#{fetch(:application)}"
 
 set :puma_threads, [4,16]
 set :puma_workers, 0
@@ -22,7 +22,7 @@ set :puma_init_active_record: true
 
 set :pry, true
 set :ssh_options, {
-    user: 'deploy'
+    user: 'nakadate'
 }
 
 set :rbnev_type, :user
