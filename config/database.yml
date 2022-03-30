@@ -27,4 +27,4 @@ production:
   username: <%= ENV['PG_USER'] %>
   password: <%= ENV['PG_PW'] %>
   host: localhost
-  database: deploy_test
+  database: deploy_test_production
