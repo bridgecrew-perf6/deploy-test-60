@@ -24,7 +24,7 @@ production:
   adapter: postgresql
   encoding: utf8
   pool: 5
-  username <%= ENV['PG_USER'] %>
-  password <%= ENV['PG_PW'] %>
+  username: <%= ENV['PG_USER'] %>
+  password: <%= ENV['PG_PW'] %>
   host: localhost
   database: deploy-test
