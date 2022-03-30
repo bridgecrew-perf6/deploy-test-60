@@ -3,7 +3,7 @@ lock "~> 3.17.0"
 
 set :application, "deploy-test"
 set :repo_url, "https://github.com/k-nishimoto-libertyfish/deploy-test.git"
-server "192.168.1.96", port: 2525, roles: [:app, :web, :db], primary: true
+server "nakadate-pro.local", port: 2525, roles: [:app, :web, :db], primary: true
 
 set :user, "nakadate"
 set :use_sudo, false
