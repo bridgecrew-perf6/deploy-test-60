@@ -38,9 +38,16 @@ require "capistrano/rails"
 require "capistrano/bundler"
 require "capistrano/rbenv"
 require "capistrano/puma"
+require "capistrano/nodenv"
 
 install_plugin Capistrano::Puma
 install_plugin Capistrano::Puma::Nginx
+
+set :nodenv_type, :user
+set :nodenv_node, '16.14.2'
+set :nodenv_prefix, "NODENV_ROOT=#{fetch(:nodenv_path)} NODENV_VERSION=#{fetch(:nodenv_node)} #{fetch(:nodenv_path)}/bin/nodenv exec"
+set :nodenv_map_bins, %w{node npm}
+set :nodenv_roles, :all
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
